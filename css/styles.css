@@ -23,6 +23,62 @@ h1 {
   font-size: 1.5rem;
 }
 
+/*Contenedor principal: Divide el diseño en dos columnas (continente  y paises*/
+.campeones {
+display: grid;
+grid-template-columns: 1fr 3fr; /*25% para continente, 75% para paises*/
+border: 2px solid black;
+width: 100%;
+}
+
+/*columna izquierda: continente ocupara todo el alto disponible automaticamente*/
+.continente {
+border-right: 2px solid black;
+padding: 15px 10px;
+font-weight: bold;
+font-size: 14px;
+}
+
+
+/*columna derecha: se convierte en otro grid para organizar el contenido interno*/
+.paises{
+display: grid;
+grid-template-columns: 1fr 1fr; /*dividido en 2 columnas para las fotos*/
+}
+
+/*el titulo del pais ocupa las dos columnas*/
+.pais{
+  grid-column: span 2;
+padding: 10px;
+font-weight: bold;
+font-size: 13px;
+border-bottom: 2px solid black;
+}
+
+/*las fotos se acomodan una al lado de la otra automaticamente (50% cada una*/
+.foto{
+min-height: 120px;
+padding: 35px 10px 10px 10px;
+font-size: 11px;
+border-bottom: 2px solid black;
+}
+
+
+/*borde vertical divisor solo en la primera foto*/
+.foto:nth-of-type(odd){
+  border-right: 2px solid black;
+}
+
+
+/*la reseña se salta al fondo ocupando las dos columnas*/
+.resenia{
+grid-column: span 2;
+padding: 10px;
+min-height: 80px;
+font-size: 11px;
+}
+
+
 /*comienzo de header*/
 header {
   background-color: #000;
@@ -77,6 +133,10 @@ nav a[aria-current='page'] {
   box-shadow: 5px 4px darkgray;
 }
 
+nav a:hover{
+background-color: rgb(201, 199, 199);
+}
+
 /*final de nav*/
 
 /*comienzo de main*/
@@ -109,23 +169,77 @@ background-size: cover;*/
 }
 
 #eeuu {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/250px-Flag_of_the_United_States_%28Pantone%29.svg.png);
+  background-image: url(../img/eeuu.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #mx {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/250px-Flag_of_Mexico.svg.png);
+  background-image: url(../img/mexico.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 #can {
-  background-image: url();
+  background-image: url(../img/canada.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
-/*fin de main*/
+/*videos*/
+#video {
+  width: 100%;
+}
+
+#video iframe {
+  width: 100%;
+  height: 100%;
+  }
+
+  /*presentacion*/
+#presentacion
+{
+height: 600px;
+
+}
+
+.videos_locales{
+background-color: #555;
+width: 600px;
+box-shadow: #000 solid 7px;
+box-shadow: #555 5px 2px;
+text-align: center;
+margin: 0 auto;
+}
+
+  /*fin de main*/
+
+  /*pagina estadios*/
+  .estadosunidos h2{
+    text-align: center;
+  }
+
+  .mexico h2{
+    text-align: center;
+  }
+
+  .canada h2{
+    text-align: center;
+  }
+
+  table, tr, td,th{
+    border: solid red 2px;
+    border-collapse: collapse;
+    width: 400px;
+    margin: 0 auto;
+    }
+    tr :hover{
+    background-color: #555;
+    }
+    td img{
+    width: 200px;
+    }
 
 /*comienzo de footer*/
 footer {
