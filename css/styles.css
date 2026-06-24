@@ -77,7 +77,16 @@ padding: 10px;
 min-height: 80px;
 font-size: 11px;
 }
+/*datos campeones*/
 
+.paises .foto img{
+width: 100%;
+}
+
+.resenia p{
+font-size: 16px;
+
+}
 
 /*comienzo de header*/
 header {
